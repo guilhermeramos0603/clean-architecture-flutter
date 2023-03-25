@@ -9,6 +9,7 @@ class SaveFavoriteCarUseCaseImp implements SaveFavoriteCarUseCase {
 
   @override
   Future<bool> call(CarEntity carEntity) async {
+    carEntity.setLogic();
     return await _saveFavoriteCarRepository(carEntity);
   }
 }
