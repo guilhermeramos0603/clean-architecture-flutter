@@ -15,7 +15,7 @@ class CarEntity {
 
   setLogic() {
     if (valueCar > 100000.00) {
-      value * 2;
+      value *= 2;
     }
   }
 }
