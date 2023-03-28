@@ -19,7 +19,7 @@ class CarDto extends CarEntity {
     };
   }
 
-  CarDto fromJson(Map json) {
+  static CarDto fromJson(Map json) {
     return CarDto(
         carPlate: json['carPlate'],
         quantityDoors: json['quantityDoors'],
