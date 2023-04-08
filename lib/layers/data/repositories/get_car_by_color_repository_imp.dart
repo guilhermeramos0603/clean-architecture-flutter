@@ -1,11 +1,14 @@
+import 'package:cleanarc/layers/data/datasources/get_car_by_color_datasource.dart';
+
 import '../../domain/entities/car_entity.dart';
 import '../../domain/repositories/get_car_by_color_repository.dart';
-import '../dto/car_dto.dart';
 
 class GetCarByColorRepositoryImp implements GetCarByColorRepository {
+  final GetCarByColorDataSource _getCarByColorDataSource;
+
+  GetCarByColorRepositoryImp(this._getCarByColorDataSource);
   @override
   CarEntity call(String color) {
-    var json = {"carPlate": "ABC1234", "quantityDoors": 2, "price": 1000.00};
-    return CarDto.fromJson(json);
+    return _getCarByColorDataSource(color);
   }
 }
