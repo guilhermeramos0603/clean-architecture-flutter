@@ -5,20 +5,12 @@ import 'package:cleanarc/layers/domain/usecases/get_car_by_color/get_car_by_colo
 import 'package:cleanarc/layers/domain/usecases/save_favorite_car/save_favorite_car_usecase_imp.dart';
 import 'package:cleanarc/layers/presentation/controllers/car_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 
 class CarPage extends StatelessWidget {
   CarPage({super.key});
 
-  final CarController controller = CarController(
-    GetCarByColorUseCaseImp(
-      GetCarByColorRepositoryImp(
-        GetCarByColorLocalDataSourceImp(),
-      ),
-    ),
-    SaveFavoriteCarUseCaseImp(
-      SaveFavoriteCarRepositoryImp(),
-    ),
-  );
+  final CarController controller = GetIt.I.get<CarController>();
 
   @override
   Widget build(BuildContext context) {
